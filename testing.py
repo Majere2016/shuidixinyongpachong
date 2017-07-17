@@ -1,0 +1,1 @@
+#!/usr/bin/env python3# -*- coding: utf-8 -*-"""Created on 2017/6/21 下午6:50@author: zhechengma"""from db import *db=MyselfDB()tablename='c_base'print(db.select(tablename))

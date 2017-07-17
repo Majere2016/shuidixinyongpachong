@@ -1,0 +1,1 @@
+import threadingimport timeNUM = 10def func(lock):    global NUM    #上锁    lock.acquire()    NUM -= 1    time.sleep(2)    print(NUM)    # 开锁    lock.release()lock = threading.Lock()  # 创建锁对象(只能锁一次)# lock = threading.RLock()   # 创建锁对象(能迭代锁多次)for i in range(10):    # 把所对象当作参数传递到任务函数里面    t = threading.Thread(target=func, args=(lock, ))    t.start()
